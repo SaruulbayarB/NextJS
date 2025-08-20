@@ -1,7 +1,21 @@
 import { Description, Header } from "@/components";
 const Home = () => {
   return (
-    <div className=" gap-3 mt-7">
+    <div className="gap-3 mt-7">
+      <div className="w-500 h-30 flex gap-5">
+        <div className="flex justify-start">Simple Blog</div>
+        <span
+          className="ml-175
+        "
+        >
+          Home
+        </span>
+        <span>About</span>
+        <span>Contact</span>
+      </div>
+      <header className="w-200 h-20 ml-100 text-5xl">
+        <h3>Welcome to Simple Blog</h3>
+      </header>
       <div className="flex gap-3">
         <Header img="https://static.nike.com/a/images/f_auto/dpr_3.0,cs_srgb/h_484,c_limit/64265cce-0cfc-4309-aa45-33835124eeaa/the-best-nike-high-top-sneakers-you-can-buy-right-now-articles-ogc.jpg"></Header>
 
@@ -26,6 +40,17 @@ const Home = () => {
         new cushioning system designed to help make all the ways you move feel easy—even running."
           title="Basketball 34S"
         ></Description>
+      </div>
+      <div>
+        <button className="w-50 h-10 bg-indigo-500 rounded-full mt-3 ml-5 hover:bg-indigo-300">
+          Read more
+        </button>
+        <button className="w-50 h-10 bg-indigo-500 rounded-full mt-3 ml-40  hover:bg-indigo-300">
+          Read more
+        </button>
+        <button className="w-50 h-10 bg-indigo-500 rounded-full mt-3 ml-30  hover:bg-indigo-300">
+          Read more
+        </button>
       </div>
     </div>
     //     <div className="flex flex-col justify-center w-120 h-150 bg-gray-800 rounded-3xl p-8 ring-1 ring-white/30 gap-4 ml-200 mt-70">
