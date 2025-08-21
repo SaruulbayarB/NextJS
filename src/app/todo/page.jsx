@@ -1,35 +1,13 @@
-"use client";
-
-import { useState } from "react";
-import { Add } from "@/components";
-import { Task } from "@/components";
-
-export default function Todo() {
-  const [tasks, setTasks] = useState([]);
-
-  const addTask = (taskName) => {
-    setTasks([...tasks, taskName]);
-  };
-
-  const deleteTask = (indexToDelete) => {
-    setTasks(tasks.filter((_, idx) => idx !== indexToDelete));
-  };
-
+import { Task, Add } from "@/components";
+const Todo = () => {
   return (
     <div className="w-[377px] mt-60 ml-200 bg-white rounded-md shadow-md p-4">
       <h3 className="text-black font-inter text-2xl font-bold mb-4">
         To-Do List
       </h3>
 
-      <Add onAdd={addTask} />
-
-      {tasks.length === 0 ? (
-        <p className="mt-4 text-gray-500 ml-4">No tasks yet. Add one above!</p>
-      ) : (
-        tasks.map((task, index) => (
-          <Task key={index} name={task} onDelete={() => deleteTask(index)} />
-        ))
-      )}
+      <Add></Add>
+      <Task name="Create PR"></Task>
 
       <div className="flex gap-1.5 mt-5 ml-4">
         <button className="w-[59px] h-[32px] bg-blue-500 rounded-md text-sm font-normal text-white">
@@ -52,4 +30,6 @@ export default function Todo() {
       </p>
     </div>
   );
-}
+};
+
+export default Todo;
