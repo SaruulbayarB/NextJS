@@ -1,4 +1,4 @@
-import { Description, Header } from "@/components";
+import { Task } from "@/components";
 const Home = () => {
   return (
     <div className="gap-3 mt-7">
