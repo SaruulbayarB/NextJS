@@ -7,7 +7,7 @@ const Todo = () => {
       </h3>
 
       <Add></Add>
-      <Task name="Create PR"></Task>
+      <Task name="Create PR" isCompleted={true} isActive={true}></Task>
 
       <div className="flex gap-1.5 mt-5 ml-4">
         <button className="w-[59px] h-[32px] bg-blue-500 rounded-md text-sm font-normal text-white">
