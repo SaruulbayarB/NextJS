@@ -17,13 +17,7 @@ const Todo = () => {
         To-Do List
       </h3>
 
-      <Add></Add>
-
-      {taskList.map((task) => {
-        return <Task name={task.name} isCompleted={task.isCompleted} />;
-      })}
-
-      <Task name="Create PR" isCompleted={true} isActive={true}></Task>
+      <Task name={inputValue} isCompleted={true} isActive={true}></Task>
 
       <div className="flex gap-1.5 mt-5 ml-4">
         <button className="w-[59px] h-[32px] bg-blue-500 rounded-md text-sm font-normal text-white">

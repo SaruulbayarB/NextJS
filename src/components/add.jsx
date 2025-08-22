@@ -3,24 +3,45 @@
 import { useState } from "react";
 
 export const Add = () => {
-  // declare useState here
-  const [task, setTask] = useState([]);
+  const [tasks, setTasks] = useState([]);
+  const [inputValue, setInputValue] = useState("");
 
-  const addExecution = () => {
-    setTask([taskList.push]);
+  const handleOnChange = (event) => {
+    setInputValue(event.target.value);
   };
+
+  const handleOnClick = () => {
+    if (inputValue.trim() === "") return;
+    setTasks([...tasks, { title: inputValue, isCompleted: true }]);
+    setInputValue("");
+  };
+
   return (
-    <div className="flex">
-      <input
-        className="w-[280px] h-[40px] ml-4 mt-1 pl-2 rounded-md bg-white border border-[#E4E4E7] text-[#71717A]"
-        placeholder="Add a new task..."
-      />
-      <button
-        onClick={addExecution}
-        className="w-[59px] h-[40px] bg-blue-500 rounded-md text-sm font-normal text-white ml-3 mt-1"
-      >
-        Add
-      </button>
+    <div className="flex flex-col gap-2 p-4">
+      <div className="flex">
+        <input
+          value={inputValue}
+          className="w-[280px] h-[40px] pl-2 rounded-md bg-white border border-[#E4E4E7] text-[#71717A]"
+          placeholder="Add a new task..."
+          onChange={handleOnChange}
+        />
+
+        <button
+          onClick={handleOnClick}
+          className="w-[59px] h-[40px] bg-blue-500 rounded-md text-sm font-normal text-white ml-3"
+        >
+          Add
+        </button>
+      </div>
+
+      {/* Render tasks */}
+      <ul className="space-y-1">
+        {tasks.map((task, index) => (
+          <li key={index} className="text-gray-700">
+            {task.title} {task.isCompleted ? "(Completed)" : ""}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };
