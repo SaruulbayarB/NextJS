@@ -4,11 +4,6 @@ import { useState } from "react";
 
 export const Add = () => {
   const [tasks, setTasks] = useState([]);
-  const [inputValue, setInputValue] = useState("");
-
-  const handleOnChange = (event) => {
-    setInputValue(event.target.value);
-  };
 
   const handleOnClick = () => {
     if (inputValue.trim() === "") return;
@@ -20,10 +15,8 @@ export const Add = () => {
     <div className="flex flex-col gap-2 p-4">
       <div className="flex">
         <input
-          value={inputValue}
           className="w-[280px] h-[40px] pl-2 rounded-md bg-white border border-[#E4E4E7] text-[#71717A]"
           placeholder="Add a new task..."
-          onChange={handleOnChange}
         />
 
         <button
@@ -35,10 +28,10 @@ export const Add = () => {
       </div>
 
       {/* Render tasks */}
-      <ul className="space-y-1">
+      <ul className="">
         {tasks.map((task, index) => (
           <li key={index} className="text-gray-700">
-            {task.title} {task.isCompleted ? "(Completed)" : ""}
+            return tasks
           </li>
         ))}
       </ul>

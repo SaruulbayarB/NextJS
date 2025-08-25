@@ -1,4 +1,12 @@
-import { Task, Add } from "@/components";
+import {
+  Task,
+  Add,
+  Excercise2,
+  Excercise3_toggle,
+  Excercise4_character_counter,
+  Excercise5_todolist,
+} from "@/components";
+
 const Todo = () => {
   const taskList = [
     {
@@ -17,7 +25,15 @@ const Todo = () => {
         To-Do List
       </h3>
 
-      <Task name={inputValue} isCompleted={true} isActive={true}></Task>
+      <Add>
+        <ul className="mt-5 text-gray-400 ml-20 text-sm">
+          {/* {TaskList.map((task, index) => {
+            <li key={index}>{task}</li>;
+          })} */}
+        </ul>
+      </Add>
+
+      <Task></Task>
 
       <div className="flex gap-1.5 mt-5 ml-4">
         <button className="w-[59px] h-[32px] bg-blue-500 rounded-md text-sm font-normal text-white">
@@ -32,17 +48,17 @@ const Todo = () => {
       </div>
 
       {/* Footer */}
-      <Add>
-        <ul className="mt-5 text-gray-400 ml-20 text-sm">
-          {/* {TaskList.map((task, index) => {
-            <li key={index}>{task}</li>;
-          })} */}
-        </ul>
-      </Add>
 
       <p className="mt-10 text-gray-400 ml-20 text-xs">
         Powered by <span className="text-[#3B73ED]">Pinecone Academy</span>
       </p>
+
+      <Excercise2></Excercise2>
+      <Excercise3_toggle></Excercise3_toggle>
+
+      <Excercise4_character_counter></Excercise4_character_counter>
+
+      <Excercise5_todolist></Excercise5_todolist>
     </div>
   );
 };
